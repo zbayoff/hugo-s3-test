@@ -8,13 +8,14 @@ stages:
 variables:
   AWS_DEFAULT_REGION: us-east-2         # The region of our S3 bucket
   BUCKET_NAME: zach-hugo-test-bucket    # Your bucket name
+  GIT_SUBMODULE_STRATEGY: recursive
 
 # ---- Build Stage ------
 buildHugo: 
   stage: build
   image: monachus/hugo
   script:
-    - hugo -t $HUGO_THEME -v --baseURL="https://blog.oxalide.io/"
+    - hugo -t $HUGO_THEME -v --baseURL="http://zach-hugo-test-bucket.s3-website.us-east-2.amazonaws.com/"
 
 deployS3:
   stage: deploy
