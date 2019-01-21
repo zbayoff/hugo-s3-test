@@ -12,6 +12,7 @@ variables:
 # ---- Build Stage ------
 buildHugo: 
   stage: build
+  image: monachus/hugo
   script:
     - hugo -t $HUGO_THEME -v --baseURL="https://blog.oxalide.io/"
 
