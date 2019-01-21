@@ -32,9 +32,7 @@ deployS3:
     url: $BASE_URL
   image: garland/aws-cli-docker
   script: 
-  - aws configure set preview.cloudfront true
   - aws s3 sync ./public s3://$BUCKET_NAME --delete
-  - aws cloudfront create-invalidation --distribution-id $CF_DISTRO_ID  --paths "/*"
 
 
 

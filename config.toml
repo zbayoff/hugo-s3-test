@@ -1,4 +1,6 @@
-baseURL = "http://example.org/"
+baseURL = "http://zach-hugo-test-bucket.s3-website.us-east-2.amazonaws.com/"
 languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "ananke"
+themesDir = "themes"
+publishDir = "public"
