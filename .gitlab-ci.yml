@@ -15,7 +15,12 @@ buildHugo:
   stage: build
   image: monachus/hugo
   script:
-    - hugo -t $HUGO_THEME -v --baseURL="http://zach-hugo-test-bucket.s3-website.us-east-2.amazonaws.com/"
+  - hugo
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
 
 deployS3:
   stage: deploy
